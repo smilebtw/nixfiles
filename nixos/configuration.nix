@@ -35,6 +35,7 @@
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
 
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -68,6 +69,10 @@
       packages = with pkgs; [];
     };
   };
+
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ] ; })
+  ];
 
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
