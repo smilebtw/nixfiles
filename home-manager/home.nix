@@ -3,6 +3,7 @@
 {
   imports = [
     ../pkgs/alacritty.nix
+    ../pkgs/zsh.nix
   ];
 
   home.username = "smile";
